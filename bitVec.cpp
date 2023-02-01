@@ -1,6 +1,6 @@
 #include "bitVec.h"
 
-bitVec::bitVec(int size) { vec = new unsigned int[(size / 32) + 1] {0}; }
+bitVec::bitVec(int size) { vec = new unsigned int[((size + 31) / 32)] {0}; }
 bitVec::~bitVec() { delete[] vec; }
 void bitVec::set(int index) {
 	vec[index / 32] |= (1 << (index % 32));
